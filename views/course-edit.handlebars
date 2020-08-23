@@ -1,0 +1,28 @@
+<h1>{{course.title}}</h1>
+<form class="course-form" action="/courses/edit" method="POST">
+	<div class="input-field">
+		<input value="{{course.title}}" placeholder="Placeholder" id="title" name="title" type="text" class="validate"
+					 required>
+		<label for="title">Название курса</label>
+		<span class="helper-text" data-error="Введите название"></span>
+	</div>
+	<div class="input-field">
+		<input value="{{course.price}}" placeholder="Placeholder" id="price" name="price" type="number" class="validate"
+					 required min="1">
+		<label for="title">Стоимость курса</label>
+		<span class="helper-text" data-error="Введите цену"></span>
+	</div>
+	<div class="input-field">
+		<input value="{{course.img}}" placeholder="Placeholder" id="img" name="img" type="text" class="validate" required>
+		<label for="title">URL обложки</label>
+		<span class="helper-text" data-error="Укажите URL"></span>
+	</div>
+
+	<input type="hidden" name="id" value="{{course.id}}">
+
+	<button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>
+<form action="/courses/remove" method="POST">
+	<input type="hidden" name="id" value="{{course.id}}">
+	<button class="btn red">Удалить курс</button>
+</form>
